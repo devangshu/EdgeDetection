@@ -9,13 +9,11 @@ horizontal_filter = vertical_filter.transpose()
 
 image = plt.imread('red_cross.png')
 
-plt.title('Original Image')
-plt.imshow(image)
-plt.show()
-
 n,m,d = image.shape
 
 edges = image.copy()
+
+
 """
 def computeVerticalScore( kernel_to_convolve):
     return ((kernel_to_convolve*vertical_filter).sum()/4)
@@ -28,6 +26,7 @@ def sobel:
         for col in range(3, m-2):
             pass
             """
+
 countIterations = 0
 for row in range(3, n-2):
   for col in range(3, m-2):
@@ -66,6 +65,12 @@ for row in range(3, n-2):
 
 
 edges =  edges/edges.max()
+
+plt.title('Original Image')
+plt.imshow(image)
+plt.show()
+
+plt.figure()
 
 plt.title('Modified Image')
 plt.imshow(edges)
